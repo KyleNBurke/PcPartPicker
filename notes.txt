@@ -1,0 +1,38 @@
+/
+/builder
+/builds
+/build/{id}
+/products/{product}
+	/cpu
+	/cpu-cooler
+	/graphics-card
+	/motherboard
+	/memory
+	/storage
+	/psu
+	/case
+/product/{product}/{id}
+
+product package
+	ProductController
+	- responds to GET /products/{product}
+	- responds to GET /products/{product}/{id}
+
+	ProductService
+	- contains all the product repositories
+
+	CpuRepository
+	GraphcisCardRepository
+	...
+
+build package
+	BuildController
+	- respond to GET /builds
+	- respond to GET /builds/{id}
+	- respond to POST /builds
+
+	BuildService
+	- contains build repository
+
+	BuildRepository
+
