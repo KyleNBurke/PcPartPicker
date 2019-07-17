@@ -1,11 +1,11 @@
 <mat-toolbar>
 	<span>PC Part Picker</span>
-	<button mat-button>Build a PC</button>
-	<button mat-button>Builds</button>
+	<button mat-button routerLink='/build'>Build a PC</button>
+	<button mat-button routerLink='/builds'>Builds</button>
 	<button mat-button [matMenuTriggerFor]="menu">Parts</button>
 </mat-toolbar>
 
 <mat-menu #menu="matMenu">
-	<button mat-menu-item>CPUs</button>
-	<button mat-menu-item>Graphics Cards</button>
+	<button mat-menu-item routerLink='/products/cpu'>CPUs</button>
+	<button mat-menu-item routerLink='/products/graphics-card'>Graphics Cards</button>
 </mat-menu>

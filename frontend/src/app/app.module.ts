@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import {
@@ -12,19 +12,31 @@ import {
 } from '@angular/material';
 
 import { NavbarComponent } from './navbar/navbar.component';
+import { BuildComponent } from './build/build.component';
+import { BuildsComponent } from './builds/builds.component';
+import { ProductComponent } from './product/product.component';
+
+const routes: Routes = [
+  { path: 'build', component: BuildComponent },
+  { path: 'builds', component: BuildsComponent },
+  { path: 'products/:type', component: ProductComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    BuildComponent,
+    BuildsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
+    RouterModule.forRoot(routes),
     MatButtonModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
